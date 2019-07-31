@@ -9,12 +9,24 @@
 
 <button mat-button (click)="coco()">Click me!</button>
 
+<p [ngClass]="classCss">Test ngClass</p>
 
-<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  <li>6</li>
-</ul>
+<p *ngIf="isAdmin; else publicContent">Afficher le contenu</p>
+
+<ng-template #publicContent>
+  <p>Contenu public</p>
+</ng-template>
+
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group">
+  <mat-radio-button class="example-radio-button"
+                    *ngFor="let product of products, index as i"
+                    [value]="product.name"
+                    (change)="chooseProduct(product)">
+    {{product.name}} - {{getAverage(i)}}
+  </mat-radio-button>
+</mat-radio-group>
+
+<app-product-show [product]="choosenProduct" (voted)="handleVote($event)"></app-product-show>
+

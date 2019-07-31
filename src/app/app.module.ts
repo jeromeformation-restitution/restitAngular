@@ -12,13 +12,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {MatCardModule} from '@angular/material';
+import {MatCardModule, MatFormFieldModule, MatRadioModule, MatSliderModule} from '@angular/material';
+import { ProductShowComponent } from './product-show/product-show.component';
+import { ProductCreateComponent } from './product-create/product-create.component';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ContainerComponent
+    ContainerComponent,
+    ProductShowComponent,
+    ProductCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +38,11 @@ import {MatCardModule} from '@angular/material';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatRadioModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

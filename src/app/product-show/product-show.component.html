@@ -1,0 +1,10 @@
+<section *ngIf="product">
+<h1>{{product.name}}</h1>
+<h5>{{product.description}}</h5>
+  <mat-slider #note
+    thumbLabel
+    min="1"
+    max="5"
+    (change)="handleVote(note.value)"
+  ></mat-slider>
+</section>

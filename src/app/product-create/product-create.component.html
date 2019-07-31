@@ -1,0 +1,13 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="product.name" name="name"
+           matInput placeholder="Nom" >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea [(ngModel)]="product.description" name="description"
+              matInput placeholder="Description"></textarea>
+  </mat-form-field>
+  <button style="background-color: red  " type="submit">Click!</button>
+  {{product | json}}
+</form>
