@@ -1,23 +1,22 @@
+import * as slug from 'slug';
+
 export class Product {
 
-  constructor(private _name?: string, private _description?: string) {
-  }
+  public id: number;
+  public name: string;
+  public slug: string;
+  public description: string;
+  public price: number;
+  public createdAt: Date;
+  public modifiedAt: Date;
+  public nbreViews: number;
+  public isPublished: boolean;
+  public imageName: string;
 
-
-  get name(): string {
-    return this._name;
-  }
-
-  set name(value: string) {
-    this._name = value;
-  }
-
-  get description(): string {
-    return this._description;
-  }
-
-  set description(value: string) {
-    this._description = value;
+  constructor(name?: string, description?: string) {
+    this.name = name;
+    this.description = description;
+    this.slug = slug(name, {lower: true});
   }
 }
 

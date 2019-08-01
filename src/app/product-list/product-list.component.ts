@@ -50,7 +50,7 @@ export class ProductListComponent implements OnInit {
     this.averages[index] = [this.averages[index][0] += $event , this.averages[index][1] + 1];
   }
   public getAverage(i: number) {
-    if (this.averages[i][1] !== 0){
+    if (this.averages[i][1] !== 0) {
       return this.averages[i][0] / this.averages[i][1];
     } else {
       return 0;
