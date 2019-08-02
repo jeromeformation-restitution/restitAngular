@@ -16,7 +16,11 @@ export class Product {
   constructor(name?: string, description?: string) {
     this.name = name;
     this.description = description;
-    this.slug = slug(name, {lower: true});
+    console.log(name);
+    if (name) {
+      this.slug = slug(name, {lower: true});
+    }
+    this.isPublished = true;
   }
 }
 

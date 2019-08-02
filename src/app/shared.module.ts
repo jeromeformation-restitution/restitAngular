@@ -6,9 +6,10 @@ import {
   MatIconModule,
   MatInputModule, MatListModule, MatMenuModule, MatRadioModule,
   MatSidenavModule,
-  MatSliderModule,
+  MatSliderModule, MatSlideToggleModule,
   MatToolbarModule
 } from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,9 @@ import {
     MatListModule,
     MatCardModule,
     MatRadioModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule,
+    MatSlideToggleModule
   ],
   exports: [
     CommonModule,
@@ -38,7 +41,9 @@ import {
     MatListModule,
     MatCardModule,
     MatRadioModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule,
+    MatSlideToggleModule
   ]
 })
 export class SharedModule { }

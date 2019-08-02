@@ -4,6 +4,20 @@
            matInput placeholder="Nom" >
   </mat-form-field>
 
+  <!-- Prix -->
+
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="product.price" name="price" step="0.01"
+           matInput placeholder="Prix" >
+  </mat-form-field>
+
+  <!-- IsPublished -->
+
+  <mat-slide-toggle
+       [checked]="product.isPublished"
+       (change)="changeIsPublished($event)"
+  > Publication du produit </mat-slide-toggle>
+
   <mat-form-field class="example-full-width">
     <textarea [(ngModel)]="product.description" name="description"
               matInput placeholder="Description"></textarea>

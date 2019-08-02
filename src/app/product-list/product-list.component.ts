@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CONST_PRODUCT, Product} from '../model/product';
+import { Product} from '../model/product';
+import {ProductService} from '../product.service';
 
 
 @Component({
@@ -9,20 +10,29 @@ import {CONST_PRODUCT, Product} from '../model/product';
 })
 export class ProductListComponent implements OnInit {
 
-    private products: Array<Product> = CONST_PRODUCT;
+    private products: Array<Product>;
     private url: string;
     private isAdmin: boolean;
     private classCss: object;
     private choosenProduct: Product;
     private averages: Array<Array<number>>;
-  constructor() {
+  constructor(private ProductService:ProductService) {
     this.url = 'https://www.ecosia.org/';
     this.isAdmin = true;
     this.changeClass();
     this.averages = [];
-    this.products.forEach(elem => this.averages.push([0, 0]));
+
   }
   ngOnInit() {
+
+    this.ProductService.getProduct().subscribe(
+      products => {
+        this.products = products;
+        this.products.forEach(elem => this.averages.push([0, 0]));
+      }
+    )
+
+
   }
   private coco(){
     this.changeClass();

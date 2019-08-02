@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from '../model/product';
+import {MatSlideToggleChange} from '@angular/material';
 
 @Component({
   selector: 'app-product-create',
@@ -16,4 +17,7 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit() {
   }
 
+  changeIsPublished($event: MatSlideToggleChange) {
+    this.product.isPublished = $event.checked;
+  }
 }
